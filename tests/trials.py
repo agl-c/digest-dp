@@ -1,4 +1,4 @@
-from tdigest import TDigest
+from tdigest.dptdigest import TDigest
 from numpy.random import random
 
 digest = TDigest()
@@ -10,6 +10,8 @@ print(digest.percentile(15))  # about 0.15, as 0.15 is the 15th percentile of th
 # print(digest.C)
 centroids = digest.centroids_to_list()
 print(centroids)
+
+digest.debug()
 
 print("******************* Then we add noise *********************")
 digest.anonymize()
