@@ -1,5 +1,9 @@
 from tdigest import TDigest
 from numpy.random import random
+import sys
+
+'\n'.join(sys.path)
+print(sys.path)
 
 digest = TDigest()
 for x in range(500):
