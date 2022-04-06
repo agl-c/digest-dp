@@ -3,6 +3,7 @@ from __future__ import print_function
 from random import choice
 from itertools import chain
 from accumulation_tree import AccumulationTree
+import numpy as np
 import pyudorandom
 
 
@@ -33,12 +34,15 @@ class Centroid(object):
 
 class TDigest(object):
 
-    def __init__(self, delta=0.01, K=25):
+    def __init__(self, delta=0.01, K=25, noise_type="laplace", eps=10):
 
         self.C = AccumulationTree(_centroid_count)
         self.n = 0
         self.delta = delta
         self.K = K
+        self.noise_type = noise_type
+        self.eps = eps
+        self.noisy_C = AccumulationTree(_centroid_count)
 
     def __add__(self, other_digest):
         data = list(chain(self.C.values(), other_digest.C.values()))
@@ -100,6 +104,27 @@ class TDigest(object):
 
     def _threshold(self, q):
         return 4 * self.n * self.delta * q * (1 - q)
+
+    def anonymize(self, noise_type="laplace", eps=10):
+    # add noise, then publish the noisy centroids
+        self.noise_type = noise_type
+        self.eps = eps
+        for key in self.C.keys():
+            tree_values = self.C.get_value(key)
+            mean = tree_values.mean
+            noisy_count = tree_values.count      
+            if self.noise_type == 'laplace':
+                noise_param = 1 / self.eps
+                noisy_count += np.random.laplace(scale=noise_param, size=1)
+            else:
+            # noise_param = advanced_composition.gauss_zcdp(eps, self.delta, self.sensitivity, len(marginals))
+            #TODO: noise_param = sigma ()
+            # noise = np.random.normal(scale=noise_param, size=marginal.shape)
+                noisy_count += 0
+            noisy_centroid = Centroid(mean, noisy_count)
+            self.noisy_C.insert(mean, noisy_centroid)     
+             
+        return 
 
     def update(self, x, w=1):
         """
