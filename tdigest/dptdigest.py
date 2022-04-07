@@ -105,8 +105,8 @@ class TDigest(object):
     def _threshold(self, q):
         return 4 * self.n * self.delta * q * (1 - q)
 
-    def debug(self):
-        print("where is the bug")
+    # def debug(self):
+    #     print("where is the bug")
 
     def anonymize(self, noise_type="laplace", eps=10):
     # add noise, then publish the noisy centroids
@@ -283,7 +283,7 @@ class TDigest(object):
 
         """
         # DEBUG
-        print("let's see what happens\n")
+        # print("let's see what happens\n")
         centroids = []
         for key in self.C.keys():
             tree_values = self.C.get_value(key)

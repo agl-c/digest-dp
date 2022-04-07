@@ -1,5 +1,9 @@
+# import sys
+# print(sys.path)
+
 from tdigest.dptdigest import TDigest
 from numpy.random import random
+
 
 digest = TDigest()
 for x in range(50):
@@ -8,10 +12,11 @@ for x in range(50):
 print(digest.percentile(15))  # about 0.15, as 0.15 is the 15th percentile of the Uniform(0,1) distribution
 
 # print(digest.C)
+print("******************* here are original centroids******************")
 centroids = digest.centroids_to_list()
 print(centroids)
 
-digest.debug()
+# digest.debug()
 
 print("******************* Then we add noise *********************")
 digest.anonymize()

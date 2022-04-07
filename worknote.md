@@ -11,18 +11,19 @@
 3. 为了感受tdigest的效果，除了原始数据包支持的求percentile的功能，可以加上画图可视化，展示tdigest，但是这可能需要限制一下有多少个centroid, 从小型数据，应该可以先实现，到规模更大的时候再说（从简单入手也是research的一般操作啊）
 
 How to implement：
-发现一个函数  
-def centroids_to_list(self):
-        """
-        Returns a Python list of the TDigest object's Centroid values.
+对count值加噪音
+Q:
+1. 输入去建立tdigest的数据，此处只用了random(), 用什么别的分布的数据/ 真实的数据？
+2. 加入的噪音，现在只用了Laplace
+3. 如何衡量？对比实验怎么设计：
+- 比较不同噪音的效果 （咋比较？现在得到了结果数据，怎么分析和展示呢）
+- 比较加噪音前后计算出的percentile
+- 在不同分布的数据上做实验
+- 
 
-        """
-        centroids = []
-        for key in self.C.keys():
-            tree_values = self.C.get_value(key)
-            centroids.append({'m':tree_values.mean, 'c':tree_values.count})
-        return centroids
-可以方便地对它操作吧
-
-对于count值加了噪音的结果，难道不会是浮点数，那会不会很奇怪
+论文组织：
+1. 介绍tdigest，dp的理论基础
+2. 介绍工程的组成部分
+3. 介绍各个实验，结果分析
+4. 不足和有待解决的问题
 
