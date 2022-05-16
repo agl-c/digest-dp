@@ -2,3 +2,4 @@
 /env
 /.cache
 /*.egg-info
+/data/wifi_on_ice.csv

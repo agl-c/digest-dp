@@ -34,6 +34,7 @@ class Centroid(object):
 
 class TDigest(object):
 
+    # default set delta=0.01, K=25
     def __init__(self, delta=0.01, K=25, noise_type="laplace", eps=10):
 
         self.C = AccumulationTree(_centroid_count)
@@ -55,6 +56,7 @@ class TDigest(object):
         return new_digest
 
     def __len__(self):
+        # print(" I am invoked")
         return len(self.C)
 
     def __repr__(self):
@@ -102,32 +104,32 @@ class TDigest(object):
         else:
             return [self.C[ceil_key]]
 
+
+    #　default: k=25  delta=0.01
+    #  if len(self) > self.K / self.delta:  num of centroids 
     def _threshold(self, q):
         return 4 * self.n * self.delta * q * (1 - q)
 
-    # def debug(self):
-    #     print("where is the bug")
-
-    def anonymize(self, noise_type="laplace", eps=10):
-    # add noise, then publish the noisy centroids
-        self.noise_type = noise_type
-        self.eps = eps
-        for key in self.C.keys():
-            tree_values = self.C.get_value(key)
-            mean = tree_values.mean
-            noisy_count = tree_values.count      
-            if self.noise_type == 'laplace':
-                noise_param = 1 / self.eps
-                noisy_count += np.random.laplace(scale=noise_param, size=1)
-            else:
-            # noise_param = advanced_composition.gauss_zcdp(eps, self.delta, self.sensitivity, len(marginals))
-            #TODO: noise_param = sigma ()
-            # noise = np.random.normal(scale=noise_param, size=marginal.shape)
-                noisy_count += 0
-            noisy_centroid = Centroid(mean, noisy_count)
-            self.noisy_C.insert(mean, noisy_centroid)     
+    # def anonymize(self, noise_type="laplace", eps=10):
+    # # add noise, then publish the noisy centroids
+    #     self.noise_type = noise_type
+    #     self.eps = eps
+    #     for key in self.C.keys():
+    #         tree_values = self.C.get_value(key)
+    #         mean = tree_values.mean
+    #         noisy_count = tree_values.count      
+    #         if self.noise_type == 'laplace':
+    #             noise_param = 1 / self.eps
+    #             noisy_count += np.random.laplace(scale=noise_param, size=1)
+    #         else:
+    #         # noise_param = advanced_composition.gauss_zcdp(eps, self.delta, self.sensitivity, len(marginals))
+    #         #TODO: noise_param = sigma ()
+    #         # noise = np.random.normal(scale=noise_param, size=marginal.shape)
+    #             noisy_count += 0
+    #         noisy_centroid = Centroid(mean, noisy_count)
+    #         self.noisy_C.insert(mean, noisy_centroid)     
              
-        return 
+    #     return 
 
     def update(self, x, w=1):
         """
@@ -161,7 +163,7 @@ class TDigest(object):
 
         if w > 0:
             self._add_centroid(Centroid(x, w))
-
+        # 25/0.01
         if len(self) > self.K / self.delta:
             self.compress()
 
@@ -240,6 +242,11 @@ class TDigest(object):
 
             t += c_i.count
         return 1
+
+    def range_count(self, x1, x2):
+        q1 = self.cdf(x1)
+        q2 = self.cdf(x2)
+        return (q2-q1)*self.n        
 
     def trimmed_mean(self, p1, p2):
         """

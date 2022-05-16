@@ -1,0 +1,113 @@
+the total number of raw samples is 5000
+the num of valid elements in data is 4688
+now we create the percentile queries [87 76 52 21 83 53 28  9 37 58 72 78 61 64 23 46 29  7 38 24]
+the quantile 87 returns estimate 92.672967 and true res 93
+the quantile 76 returns estimate 78.864667 and true res 79
+the quantile 52 returns estimate 66.059298 and true res 66
+the quantile 21 returns estimate 54.059718 and true res 54
+the quantile 83 returns estimate 86.947172 and true res 87
+the quantile 53 returns estimate 66.470526 and true res 66
+the quantile 28 returns estimate 56.293289 and true res 56
+the quantile 9 returns estimate 47.812239 and true res 48
+the quantile 37 returns estimate 59.595878 and true res 60
+the quantile 58 returns estimate 68.897011 and true res 69
+the quantile 72 returns estimate 76.233885 and true res 76
+the quantile 78 returns estimate 80.471504 and true res 80
+the quantile 61 returns estimate 70.407158 and true res 70
+the quantile 64 returns estimate 71.897021 and true res 72
+the quantile 23 returns estimate 54.720000 and true res 55
+the quantile 46 returns estimate 63.473509 and true res 63
+the quantile 29 returns estimate 56.604784 and true res 57
+the quantile 7 returns estimate 46.171789 and true res 46
+the quantile 38 returns estimate 59.953740 and true res 60
+the quantile 24 returns estimate 55.047309 and true res 55
+in 20 quantile queries, the mean err is 0.236125, and the var of err is 0.024136
+create a range query [262,718]
+create a range query [568,806]
+create a range query [132,161]
+create a range query [292,368]
+create a range query [314,718]
+create a range query [138,143]
+create a range query [231,358]
+create a range query [68,230]
+create a range query [135,371]
+create a range query [122,806]
+create a range query [36,416]
+create a range query [568,718]
+create a range query [133,198]
+create a range query [107,143]
+create a range query [51,1110]
+create a range query [509,568]
+create a range query [147,148]
+create a range query [164,522]
+create a range query [67,341]
+create a range query [1177,1343]
+now we create the range queries [ 262  568  132  292  314  138  231   68  135  122   36  568  133  107
+   51  509  147  164   67 1177] [ 718.  806.  161.  368.  718.  143.  358.  230.  371.  806.  416.  718.
+  198.  143. 1110.  568.  148.  522.  341. 1343.]
+now we run the queries with ml, mr
+now we run the query [42,67]
+the true count is 2449
+the t-digest estimated count is 2377
+now we run the query [54,105]
+the true count is 3380
+the t-digest estimated count is 3297
+now we run the query [55,69]
+the true count is 1718
+the t-digest estimated count is 1610
+now we run the query [82,402]
+the true count is 915
+the t-digest estimated count is 898
+now we run the query [41,69]
+the true count is 2662
+the t-digest estimated count is 2601
+now we run the query [67,70]
+the true count is 378
+the t-digest estimated count is 276
+now we run the query [38,77]
+the true count is 3445
+the t-digest estimated count is 3390
+now we run the query [62,82]
+the true count is 1793
+the t-digest estimated count is 1730
+now we run the query [60,67]
+the true count is 866
+the t-digest estimated count is 757
+now we run the query [137,402]
+the true count is 149
+the t-digest estimated count is 145
+now we run the query [65,72]
+the true count is 790
+the t-digest estimated count is 691
+now we run the query [54,69]
+the true count is 1868
+the t-digest estimated count is 1752
+now we run the query [67,82]
+the true count is 1248
+the t-digest estimated count is 1182
+now we run the query [88,114]
+the true count is 447
+the t-digest estimated count is 423
+now we run the query [68,137]
+the true count is 1888
+the t-digest estimated count is 1838
+now we run the query [50,228]
+the true count is 4004
+the t-digest estimated count is 3967
+now we run the query [65,75]
+the true count is 1050
+the t-digest estimated count is 961
+now we run the query [39,75]
+the true count is 3264
+the t-digest estimated count is 3209
+now we run the query [72,105]
+the true count is 1322
+the t-digest estimated count is 1263
+now we run the query [69,77]
+the true count is 791
+the t-digest estimated count is 707
+in 20 range queries, the mean absolute err is 67.314677, and the var of err is 959.534958
+num of centroids is 102
+we can see 1500ms is around the percentile
+1
+Now we want to give an empirical graph of CDF displaying the centroids
