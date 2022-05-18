@@ -55,7 +55,7 @@ for i in range(n):
     digest.update(data[i])
 
 
-parser=argparse.ArgumentParser(description='exp of t-digest range queries')
+parser=argparse.ArgumentParser(description='exp of t-digest queries')
 parser.add_argument('--n', type=int, default=500, help="specify the num of total samples")
 parser.add_argument('--type', type=str, default='uniform', help="specify the range query type")
 parser.add_argument('--num', type=int, default=20, help="specify the num of queries to run")
