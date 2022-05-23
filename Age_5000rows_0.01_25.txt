@@ -1,0 +1,408 @@
+the total number of raw samples is 5000
+the num of valid elements in data is 5000
+run percentile queries
+the percentile 84 returns estimate 56.272321 and true res 56
+the percentile 93 returns estimate 60.658537 and true res 61
+the percentile 98 returns estimate 65.851852 and true res 66
+the percentile 76 returns estimate 53.161871 and true res 53
+the percentile 92 returns estimate 60.048780 and true res 60
+the percentile 21 returns estimate 30.488095 and true res 30
+the percentile 94 returns estimate 61.338462 and true res 61
+the percentile 18 returns estimate 29.339552 and true res 29
+the percentile 27 returns estimate 32.797794 and true res 33
+the percentile 49 returns estimate 41.678392 and true res 42
+the percentile 95 returns estimate 62.129630 and true res 62
+the percentile 30 returns estimate 33.945946 and true res 34
+the percentile 78 returns estimate 53.881295 and true res 54
+the percentile 5 returns estimate 23.194286 and true res 23
+the percentile 12 returns estimate 26.924171 and true res 27
+the percentile 40 returns estimate 37.883333 and true res 38
+the percentile 14 returns estimate 27.821429 and true res 28
+the percentile 44 returns estimate 39.500000 and true res 39
+the percentile 19 returns estimate 29.712687 and true res 30
+the percentile 45 returns estimate 39.890625 and true res 40
+the percentile 6 returns estimate 23.765714 and true res 24
+the percentile 42 returns estimate 38.704918 and true res 39
+the percentile 55 returns estimate 44.378261 and true res 44
+the percentile 85 returns estimate 56.718750 and true res 57
+the percentile 28 returns estimate 33.173745 and true res 33
+the percentile 50 returns estimate 42.173913 and true res 42
+the percentile 65 returns estimate 48.647059 and true res 49
+the percentile 38 returns estimate 37.050000 and true res 37
+the percentile 74 returns estimate 52.362140 and true res 52
+the percentile 22 returns estimate 30.884921 and true res 31
+the percentile 82 returns estimate 55.405983 and true res 55
+the percentile 81 returns estimate 54.981618 and true res 55
+the percentile 41 returns estimate 38.295082 and true res 38
+the percentile 48 returns estimate 41.175879 and true res 41
+the percentile 90 returns estimate 58.929907 and true res 59
+the percentile 24 returns estimate 31.673228 and true res 32
+the percentile 26 returns estimate 32.430147 and true res 32
+the percentile 63 returns estimate 47.816733 and true res 48
+the percentile 100 returns estimate 78.000000 and true res 84
+the percentile 13 returns estimate 27.375000 and true res 27
+the percentile 0 returns estimate 14.000000 and true res 14
+the percentile 53 returns estimate 43.533058 and true res 44
+the percentile 54 returns estimate 43.946281 and true res 44
+the percentile 33 returns estimate 35.142857 and true res 35
+the percentile 15 returns estimate 28.223048 and true res 28
+the percentile 72 returns estimate 51.540984 and true res 52
+the percentile 97 returns estimate 64.194030 and true res 64
+the percentile 86 returns estimate 57.155462 and true res 57
+the percentile 67 returns estimate 49.495726 and true res 50
+the percentile 83 returns estimate 55.833333 and true res 56
+the percentile 16 returns estimate 28.594796 and true res 29
+the percentile 77 returns estimate 53.521583 and true res 54
+the percentile 2 returns estimate 20.905882 and true res 21
+the percentile 75 returns estimate 52.773663 and true res 53
+the percentile 69 returns estimate 50.328000 and true res 50
+the percentile 10 returns estimate 25.973684 and true res 26
+the percentile 39 returns estimate 37.466667 and true res 37
+the percentile 25 returns estimate 32.062500 and true res 32
+the percentile 35 returns estimate 35.894737 and true res 36
+the percentile 29 returns estimate 33.559846 and true res 34
+the percentile 11 returns estimate 26.450237 and true res 26
+the percentile 8 returns estimate 24.913793 and true res 25
+the percentile 87 returns estimate 57.575630 and true res 58
+the percentile 57 returns estimate 45.263889 and true res 45
+the percentile 60 returns estimate 46.597458 and true res 47
+the percentile 59 returns estimate 46.173729 and true res 46
+the percentile 61 returns estimate 47.019920 and true res 47
+the percentile 37 returns estimate 36.661538 and true res 37
+the percentile 71 returns estimate 51.131148 and true res 51
+the percentile 51 returns estimate 42.657005 and true res 43
+the percentile 34 returns estimate 35.518797 and true res 36
+the percentile 4 returns estimate 22.531915 and true res 23
+the percentile 52 returns estimate 43.119835 and true res 43
+the percentile 91 returns estimate 59.480226 and true res 59
+the percentile 20 returns estimate 30.091270 and true res 30
+the percentile 3 returns estimate 21.786325 and true res 22
+the percentile 66 returns estimate 49.068376 and true res 49
+the percentile 58 returns estimate 45.726852 and true res 46
+the percentile 79 returns estimate 54.246324 and true res 54
+the percentile 89 returns estimate 58.462617 and true res 58
+the percentile 23 returns estimate 31.279528 and true res 31
+the percentile 32 returns estimate 34.750000 and true res 35
+the percentile 56 returns estimate 44.813043 and true res 45
+the percentile 73 returns estimate 51.950820 and true res 52
+the percentile 1 returns estimate 19.603448 and true res 20
+the percentile 70 returns estimate 50.728000 and true res 51
+the percentile 7 returns estimate 24.339080 and true res 24
+the percentile 88 returns estimate 57.995798 and true res 58
+the percentile 43 returns estimate 39.109375 and true res 39
+the percentile 17 returns estimate 28.966543 and true res 29
+the percentile 68 returns estimate 49.923077 and true res 50
+the percentile 99 returns estimate 68.623188 and true res 69
+the percentile 80 returns estimate 54.613971 and true res 55
+the percentile 46 returns estimate 40.303797 and true res 40
+the percentile 9 returns estimate 25.447368 and true res 26
+the percentile 31 returns estimate 34.346774 and true res 34
+the percentile 96 returns estimate 63.064516 and true res 63
+the percentile 62 returns estimate 47.418327 and true res 47
+the percentile 64 returns estimate 48.226891 and true res 48
+the percentile 47 returns estimate 40.725738 and true res 41
+in 100 percentile queries, the mean err is 0.306088, and the var of err is 0.348993
+now we run the query [57,63)
+the true count is 545
+the t-digest estimated count is 515
+now we run the query [57,64)
+the true count is 599
+the t-digest estimated count is 562
+now we run the query [19,74)
+the true count is 4972
+the t-digest estimated count is 4956
+now we run the query [28,67)
+the true count is 4262
+the t-digest estimated count is 4206
+now we run the query [55,74)
+the true count is 1001
+the t-digest estimated count is 936
+now we run the query [42,75)
+the true count is 2555
+the t-digest estimated count is 2510
+now we run the query [50,65)
+the true count is 1514
+the t-digest estimated count is 1468
+now we run the query [58,73)
+the true count is 649
+the t-digest estimated count is 584
+now we run the query [33,84)
+the true count is 3693
+the t-digest estimated count is 3622
+now we run the query [23,49)
+the true count is 3040
+the t-digest estimated count is 3059
+now we run the query [60,61)
+the true count is 88
+the t-digest estimated count is 82
+now we run the query [29,45)
+the true count is 1984
+the t-digest estimated count is 1967
+now we run the query [34,64)
+the true count is 3375
+the t-digest estimated count is 3336
+now we run the query [20,31)
+the true count is 1007
+the t-digest estimated count is 1053
+now we run the query [21,36)
+the true count is 1619
+the t-digest estimated count is 1660
+now we run the query [33,34)
+the true count is 143
+the t-digest estimated count is 129
+now we run the query [60,67)
+the true count is 366
+the t-digest estimated count is 330
+now we run the query [38,56)
+the true count is 2157
+the t-digest estimated count is 2155
+now we run the query [47,77)
+the true count is 2011
+the t-digest estimated count is 1947
+now we run the query [52,62)
+the true count is 1117
+the t-digest estimated count is 1087
+now we run the query [32,73)
+the true count is 3810
+the t-digest estimated count is 3743
+now we run the query [81,84)
+the true count is 2
+the t-digest estimated count is 0
+now we run the query [45,48)
+the true count is 343
+the t-digest estimated count is 351
+now we run the query [71,73)
+the true count is 16
+the t-digest estimated count is 13
+now we run the query [75,77)
+the true count is 2
+the t-digest estimated count is 2
+now we run the query [38,53)
+the true count is 1756
+the t-digest estimated count is 1763
+now we run the query [71,72)
+the true count is 7
+the t-digest estimated count is 10
+now we run the query [66,75)
+the true count is 102
+the t-digest estimated count is 87
+now we run the query [32,73)
+the true count is 3810
+the t-digest estimated count is 3743
+now we run the query [26,61)
+the true count is 4195
+the t-digest estimated count is 4175
+now we run the query [32,36)
+the true count is 520
+the t-digest estimated count is 522
+now we run the query [30,64)
+the true count is 3899
+the t-digest estimated count is 3855
+now we run the query [51,59)
+the true count is 994
+the t-digest estimated count is 973
+now we run the query [32,59)
+the true count is 3286
+the t-digest estimated count is 3266
+now we run the query [26,57)
+the true count is 3780
+the t-digest estimated count is 3778
+now we run the query [28,71)
+the true count is 4315
+the t-digest estimated count is 4251
+now we run the query [65,84)
+the true count is 136
+the t-digest estimated count is 122
+now we run the query [36,63)
+the true count is 3073
+the t-digest estimated count is 3032
+now we run the query [44,62)
+the true count is 2071
+the t-digest estimated count is 2036
+now we run the query [46,71)
+the true count is 2096
+the t-digest estimated count is 2042
+now we run the query [29,71)
+the true count is 4187
+the t-digest estimated count is 4117
+now we run the query [75,81)
+the true count is 4
+the t-digest estimated count is 8
+now we run the query [78,81)
+the true count is 1
+the t-digest estimated count is 4
+now we run the query [41,46)
+the true count is 548
+the t-digest estimated count is 547
+now we run the query [29,39)
+the true count is 1287
+the t-digest estimated count is 1281
+now we run the query [72,84)
+the true count is 21
+the t-digest estimated count is 18
+now we run the query [23,34)
+the true count is 1254
+the t-digest estimated count is 1274
+now we run the query [15,21)
+the true count is 77
+the t-digest estimated count is 102
+now we run the query [56,74)
+the true count is 878
+the t-digest estimated count is 819
+now we run the query [27,70)
+the true count is 4400
+the t-digest estimated count is 4357
+now we run the query [55,57)
+the true count is 234
+the t-digest estimated count is 228
+now we run the query [78,81)
+the true count is 1
+the t-digest estimated count is 4
+now we run the query [59,62)
+the true count is 253
+the t-digest estimated count is 235
+now we run the query [29,50)
+the true count is 2565
+the t-digest estimated count is 2554
+now we run the query [15,65)
+the true count is 4862
+the t-digest estimated count is 4875
+now we run the query [70,74)
+the true count is 32
+the t-digest estimated count is 22
+now we run the query [77,84)
+the true count is 4
+the t-digest estimated count is 5
+now we run the query [32,38)
+the true count is 780
+the t-digest estimated count is 772
+now we run the query [70,78)
+the true count is 36
+the t-digest estimated count is 30
+now we run the query [42,63)
+the true count is 2332
+the t-digest estimated count is 2315
+now we run the query [19,37)
+the true count is 1811
+the t-digest estimated count is 1861
+now we run the query [31,56)
+the true count is 3062
+the t-digest estimated count is 3055
+now we run the query [20,67)
+the true count is 4873
+the t-digest estimated count is 4865
+now we run the query [69,70)
+the true count is 12
+the t-digest estimated count is 6
+now we run the query [17,36)
+the true count is 1695
+the t-digest estimated count is 1758
+now we run the query [35,40)
+the true count is 636
+the t-digest estimated count is 633
+now we run the query [43,78)
+the true count is 2470
+the t-digest estimated count is 2410
+now we run the query [72,74)
+the true count is 14
+the t-digest estimated count is 6
+now we run the query [18,63)
+the true count is 4761
+the t-digest estimated count is 4782
+now we run the query [25,51)
+the true count is 3099
+the t-digest estimated count is 3126
+now we run the query [29,33)
+the true count is 522
+the t-digest estimated count is 522
+now we run the query [48,54)
+the true count is 731
+the t-digest estimated count is 743
+now we run the query [51,75)
+the true count is 1524
+the t-digest estimated count is 1457
+now we run the query [78,81)
+the true count is 1
+the t-digest estimated count is 4
+now we run the query [45,71)
+the true count is 2203
+the t-digest estimated count is 2150
+now we run the query [45,59)
+the true count is 1695
+the t-digest estimated count is 1685
+now we run the query [45,68)
+the true count is 2166
+the t-digest estimated count is 2112
+now we run the query [58,72)
+the true count is 640
+the t-digest estimated count is 581
+now we run the query [77,78)
+the true count is 1
+the t-digest estimated count is 1
+now we run the query [56,65)
+the true count is 749
+the t-digest estimated count is 707
+now we run the query [77,84)
+the true count is 4
+the t-digest estimated count is 5
+now we run the query [32,37)
+the true count is 654
+the t-digest estimated count is 652
+now we run the query [75,84)
+the true count is 6
+the t-digest estimated count is 8
+now we run the query [47,68)
+the true count is 1950
+the t-digest estimated count is 1886
+now we run the query [70,77)
+the true count is 35
+the t-digest estimated count is 28
+now we run the query [40,46)
+the true count is 674
+the t-digest estimated count is 665
+now we run the query [81,84)
+the true count is 2
+the t-digest estimated count is 0
+now we run the query [52,58)
+the true count is 739
+the t-digest estimated count is 744
+now we run the query [74,75)
+the true count is 1
+the t-digest estimated count is 3
+now we run the query [62,84)
+the true count is 283
+the t-digest estimated count is 257
+now we run the query [24,47)
+the true count is 2713
+the t-digest estimated count is 2727
+now we run the query [68,77)
+the true count is 61
+the t-digest estimated count is 60
+now we run the query [33,70)
+the true count is 3654
+the t-digest estimated count is 3588
+now we run the query [52,56)
+the true count is 515
+the t-digest estimated count is 513
+now we run the query [38,60)
+the true count is 2595
+the t-digest estimated count is 2582
+now we run the query [68,70)
+the true count is 26
+the t-digest estimated count is 31
+now we run the query [63,71)
+the true count is 201
+the t-digest estimated count is 174
+now we run the query [39,63)
+the true count is 2699
+the t-digest estimated count is 2660
+now we run the query [47,59)
+the true count is 1479
+the t-digest estimated count is 1459
+now we run the query [41,73)
+the true count is 2660
+the t-digest estimated count is 2602
+in 100 range queries, the mean absolute err is 24.567857, and the var of err is 517.008689
+num of centroids is 59
+0.6818
+Now we want to give an empirical graph of CDF displaying the centroids

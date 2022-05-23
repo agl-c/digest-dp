@@ -1,0 +1,5 @@
+the total number of raw samples is 5000
+the num of valid elements in data is 5000
+num of centroids is 112
+0.0088
+Now we want to give an empirical graph of CDF displaying the centroids
