@@ -1,5 +1,6 @@
 import enum
 from http.client import ImproperConnectionState
+# import imp
 from random import random
 from turtle import st
 from cv2 import mean
@@ -10,9 +11,11 @@ import pickle
 import pandas
 import argparse
 import sys
+import time
+import tracemalloc
 
 # randomly select range queries or specify all the queries with ml, mr
-np.random.seed()
+np.random.seed(42)
 
 PL = [1307,34,2660,332,125,159,152,3513,80,164,71,177,1702,
 1769,246,502,411,1551,1719,73,86,493,289,164,157,212,46,376,
@@ -72,24 +75,29 @@ q = [84,93,98,76,92,21,94,18,27,49,95,30,78,5,12,40,14,44,19,45,
 31,96,62,64,47]
 
 parser=argparse.ArgumentParser(description='exp of t-digest queries')
-parser.add_argument('--path',type=str, default="./data/normal_data_5000r.csv", help='specify the path of data')
+parser.add_argument('--K', type=float, default=25, help='specify the K factor in t-digest restrictions')
+parser.add_argument('--delta', type=float, default=0.01, help='specify the delta factor in t-digest restrictions')
+parser.add_argument('--dataset',type=str, default= 'normal_data_200000r', help='specify the name of data in result file')
 parser.add_argument('--name',type=str, default='normal', help='specify the name of data in result file')
-parser.add_argument('--n', type=int, default=5000, help="specify the num of total samples")
+parser.add_argument('--n', type=int, default=200000, help="specify the num of total samples")
 parser.add_argument('--type', type=str, default='uniform', help="specify the range query type")
 parser.add_argument('--num', type=int, default=100, help="specify the num of queries to run")
+parser.add_argument('--x', type=str, default='x', help='specify the name of x value')
 args = parser.parse_args()
 
-name = args.name
 
 # redirect output to txt file
-# sys.stdout = open("Age_5000rows_0.01_25.txt",'w')
-sys.stdout = open('ping_5000rows_0.01_25.txt','w')
-# sys.stdout = open('normal_5000rows_0.01_50.txt','w')
+# accidential_drug_deaths  normal_data_5000r 49733rows_link_ping  normal_data_200000r
+res_name = f'{args.dataset}_K_{args.K}delta_{args.delta}_[).txt'
+sys.stdout = open(res_name, 'w')
 
+# sys.stdout = open("Age_5000rows_0.01_25.txt",'w')
+# sys.stdout = open('ping_5000rows_0.01_25.txt','w')
+# sys.stdout = open('normal_5000rows_0.01_50.txt','w')
 
 # load and preprocess data
 # df = pandas.read_csv("./data/accidential_drug_deaths.csv", usecols=['Age'], nrows=5000)
-df = pandas.read_csv("./data/49733rows_link_ping.csv", usecols=['link_ping'],nrows=5000)
+df = pandas.read_csv(f"../data/{args.dataset}.csv", usecols=[args.x],nrows=args.n)
 # df = pandas.read_csv('./data/normal_data_5000r.csv', usecols = ['x'], nrows = 5000)
 
 
@@ -119,28 +127,35 @@ sorted_data = np.sort(data)
 len = len(sorted_data)
 unique_data = np.unique(data)
 
-# then create the t-digest
-digest = TDigest()
-for i in range(n):
-    digest.update(data[i])
-
-
-def range_query_creator():
+def range_query_creator(pre=200):
     type = args.type
     num = args.num
-    l_array = np.zeros(num)
-    r_array = np.zeros(num,int)
+    l_array = np.zeros(pre)
+    r_array = np.zeros(pre,int)
 
     if type == "uniform":
-        l_array = np.random.choice(unique_data,num,replace=True)
-        for i in range(num):
+        l_array = np.random.choice(unique_data,pre,replace=True)
+        for i in range(pre):
             # make sure r is > l, the problem is when l==r, always ans 0, but that's wrong
             # choose from unique, cannot be the same
             while(r_array[i] < l_array[i]):
                 r_array[i]=np.random.choice(unique_data)
             # print('create a range query [%d,%d]' % (l_array[i],r_array[i]))
+        
+        tot = 0 
+        L = []
+        R = []
+        for i in range(pre):
+            if r_array[i] == l_array[i]:
+                continue
+            L.append(l_array[i])
+            R.append(r_array[i])
+            tot += 1
+            if(tot == 100):
+                break
 
-    return l_array, r_array
+    return L, R
+
 
 def run_range_queries(l_array, r_array):
     num = args.num
@@ -171,6 +186,69 @@ def run_range_queries(l_array, r_array):
 
     return    
 
+
+def run_range_queries1(l_array, r_array):
+    print('this version true count is num of samples in (l,r)')
+    num = args.num
+    err = []
+    tot = 0 
+    for i in range(num):
+        l = l_array[i]
+        r = r_array[i]
+        if(l == r):
+            continue
+        tot += 1
+        print('now we run the query (%d,%d)' % (l,r))
+     
+        sp = np.where(sorted_data == l)
+        s = sp[0][-1]
+        ep = np.where(sorted_data == r)
+        e = ep[0][0]
+        true_count = e-s-1
+        print('the true count is %d' % true_count)
+
+        est_count = digest.range_count(l,r)
+        print('the t-digest estimated count is %d' % est_count)
+        err.append(np.abs(true_count-est_count))
+
+    mean_err = np.mean(err)
+    mse = np.var(err)
+    print("in %d range queries, the mean absolute err is %f, and the var of err is %f" % (tot, mean_err, mse))
+
+    return        
+
+
+def run_range_queries2(l_array, r_array):
+    print('this version true count is num of samples in (l,r]')
+    num = args.num
+    err = []
+    tot = 0 
+    for i in range(num):
+        l = l_array[i]
+        r = r_array[i]
+        if(l == r):
+            continue
+        tot += 1
+        print('now we run the query (%d,%d]' % (l,r))
+     
+        sp = np.where(sorted_data == l)
+        s = sp[0][-1]
+        ep = np.where(sorted_data == r)
+        e = ep[0][-1]
+        true_count = e-s
+        print('the true count is %d' % true_count)
+
+        est_count = digest.range_count(l,r)
+        print('the t-digest estimated count is %d' % est_count)
+        err.append(np.abs(true_count-est_count))
+
+    mean_err = np.mean(err)
+    mse = np.var(err)
+    print("in %d range queries, the mean absolute err is %f, and the var of err is %f" % (tot, mean_err, mse))
+
+    return        
+
+
 def percentile_query_creator():
     num = args.num
     # different percentiles
@@ -196,34 +274,49 @@ def run_percentile_queries(q):
 
 
 # q = percentile_query_creator()
-run_percentile_queries(q)
+# run_percentile_queries(q)
 
-# l_array, r_array = range_query_creator()
-# print('now we run the queries with specified L, R')
-# run_range_queries(l_array, r_array)
-run_range_queries(PL,PR)
+l_array, r_array = range_query_creator()
+
+st = time.time()
+tracemalloc.start()
+# then create the t-digest
+digest = TDigest()
+for i in range(n):
+    digest.update(data[i])
+run_range_queries(l_array, r_array)
+# run_range_queries1(NL,NR)
+
+ed = time.time()
+elapse = (ed-st)*1000
+print('the elpased time in t-digest range-exp is',elapse, "milliseconds")
+
+print(tracemalloc.get_traced_memory())
+tracemalloc.stop()
+
 
 # display some features
 num_centroids = digest.__len__()
 print('num of centroids is %d' % num_centroids)
 
-# print('we can see 1500ms is around the percentile')
-print(digest.cdf(50))
-
-print("Now we want to give an empirical graph of CDF displaying the centroids")
+# print('we can see 1500ms is around the percentile', digest.cdf(1500))
 sys.stdout.close()
 
-# we use lines (x=mean, y= np.linspace(0,count,10000))
-for i, key in enumerate(digest.C.keys()):
+
+def display_cdf():
+    print("Now we want to give an empirical graph of CDF displaying the centroids")
+    # we use lines (x=mean, y= np.linspace(0,count,10000))
+    for i, key in enumerate(digest.C.keys()):
     # count = digest.C[key]
-    cdf = digest.cdf(key)
-    y = np.linspace(0, cdf, 10000)
-    x = [key for i in range(10000)]
-    plt.plot(x, y, color = 'xkcd:sky blue')
+        cdf = digest.cdf(key)
+        y = np.linspace(0, cdf, 10000)
+        x = [key for i in range(10000)]
+        plt.plot(x, y, color = 'xkcd:sky blue')
 
-plt.xlabel('X value')
-plt.ylabel('Cumulative Probability')
-plt.title('Empirical CDF display of ping Data t-digest')
-plt.gca().yaxis.set_label_coords(-0.1,0.8)
-plt.show()
+    plt.xlabel('X value')
+    plt.ylabel('Cumulative Probability')
+    plt.title('Empirical CDF display of ping Data t-digest')
+    plt.gca().yaxis.set_label_coords(-0.1,0.8)
+    plt.show()
 
+# display_cdf()

@@ -1,0 +1,306 @@
+the total number of raw samples is 5000
+the num of valid elements in data is 5000
+this version true count is num of samples in (l,r)
+now we run the query (57,63)
+the true count is 432
+the t-digest estimated count is 515
+now we run the query (57,64)
+the true count is 486
+the t-digest estimated count is 562
+now we run the query (19,74)
+the true count is 4947
+the t-digest estimated count is 4956
+now we run the query (28,67)
+the true count is 4134
+the t-digest estimated count is 4206
+now we run the query (55,74)
+the true count is 878
+the t-digest estimated count is 936
+now we run the query (42,75)
+the true count is 2467
+the t-digest estimated count is 2510
+now we run the query (50,65)
+the true count is 1394
+the t-digest estimated count is 1468
+now we run the query (58,73)
+the true count is 524
+the t-digest estimated count is 584
+now we run the query (33,84)
+the true count is 3550
+the t-digest estimated count is 3622
+now we run the query (23,49)
+the true count is 2964
+the t-digest estimated count is 3059
+now we run the query (60,61)
+the true count is 0
+the t-digest estimated count is 82
+now we run the query (29,45)
+the true count is 1843
+the t-digest estimated count is 1967
+now we run the query (34,64)
+the true count is 3259
+the t-digest estimated count is 3336
+now we run the query (20,31)
+the true count is 974
+the t-digest estimated count is 1053
+now we run the query (21,36)
+the true count is 1567
+the t-digest estimated count is 1660
+now we run the query (33,34)
+the true count is 0
+the t-digest estimated count is 129
+now we run the query (60,67)
+the true count is 278
+the t-digest estimated count is 330
+now we run the query (38,56)
+the true count is 2043
+the t-digest estimated count is 2155
+now we run the query (47,77)
+the true count is 1884
+the t-digest estimated count is 1947
+now we run the query (52,62)
+the true count is 1003
+the t-digest estimated count is 1087
+now we run the query (32,73)
+the true count is 3681
+the t-digest estimated count is 3743
+now we run the query (81,84)
+the true count is 0
+the t-digest estimated count is 0
+now we run the query (45,48)
+the true count is 236
+the t-digest estimated count is 351
+now we run the query (71,73)
+the true count is 9
+the t-digest estimated count is 13
+now we run the query (75,77)
+the true count is 0
+the t-digest estimated count is 2
+now we run the query (38,53)
+the true count is 1642
+the t-digest estimated count is 1763
+now we run the query (71,72)
+the true count is 0
+the t-digest estimated count is 10
+now we run the query (66,75)
+the true count is 75
+the t-digest estimated count is 87
+now we run the query (32,73)
+the true count is 3681
+the t-digest estimated count is 3743
+now we run the query (26,61)
+the true count is 4080
+the t-digest estimated count is 4175
+now we run the query (32,36)
+the true count is 391
+the t-digest estimated count is 522
+now we run the query (30,64)
+the true count is 3772
+the t-digest estimated count is 3855
+now we run the query (51,59)
+the true count is 864
+the t-digest estimated count is 973
+now we run the query (32,59)
+the true count is 3157
+the t-digest estimated count is 3266
+now we run the query (26,57)
+the true count is 3665
+the t-digest estimated count is 3778
+now we run the query (28,71)
+the true count is 4187
+the t-digest estimated count is 4251
+now we run the query (65,84)
+the true count is 108
+the t-digest estimated count is 122
+now we run the query (36,63)
+the true count is 2939
+the t-digest estimated count is 3032
+now we run the query (44,62)
+the true count is 1948
+the t-digest estimated count is 2036
+now we run the query (46,71)
+the true count is 1987
+the t-digest estimated count is 2042
+now we run the query (29,71)
+the true count is 4046
+the t-digest estimated count is 4117
+now we run the query (75,81)
+the true count is 2
+the t-digest estimated count is 8
+now we run the query (78,81)
+the true count is 0
+the t-digest estimated count is 4
+now we run the query (41,46)
+the true count is 437
+the t-digest estimated count is 547
+now we run the query (29,39)
+the true count is 1146
+the t-digest estimated count is 1281
+now we run the query (72,84)
+the true count is 12
+the t-digest estimated count is 18
+now we run the query (23,34)
+the true count is 1178
+the t-digest estimated count is 1274
+now we run the query (15,21)
+the true count is 76
+the t-digest estimated count is 102
+now we run the query (56,74)
+the true count is 767
+the t-digest estimated count is 819
+now we run the query (27,70)
+the true count is 4304
+the t-digest estimated count is 4357
+now we run the query (55,57)
+the true count is 111
+the t-digest estimated count is 228
+now we run the query (78,81)
+the true count is 0
+the t-digest estimated count is 4
+now we run the query (59,62)
+the true count is 164
+the t-digest estimated count is 235
+now we run the query (29,50)
+the true count is 2424
+the t-digest estimated count is 2554
+now we run the query (15,65)
+the true count is 4861
+the t-digest estimated count is 4875
+now we run the query (70,74)
+the true count is 21
+the t-digest estimated count is 22
+now we run the query (77,84)
+the true count is 3
+the t-digest estimated count is 5
+now we run the query (32,38)
+the true count is 651
+the t-digest estimated count is 772
+now we run the query (70,78)
+the true count is 25
+the t-digest estimated count is 30
+now we run the query (42,63)
+the true count is 2244
+the t-digest estimated count is 2315
+now we run the query (19,37)
+the true count is 1786
+the t-digest estimated count is 1861
+now we run the query (31,56)
+the true count is 2937
+the t-digest estimated count is 3055
+now we run the query (20,67)
+the true count is 4840
+the t-digest estimated count is 4865
+now we run the query (69,70)
+the true count is 0
+the t-digest estimated count is 6
+now we run the query (17,36)
+the true count is 1688
+the t-digest estimated count is 1758
+now we run the query (35,40)
+the true count is 504
+the t-digest estimated count is 633
+now we run the query (43,78)
+the true count is 2351
+the t-digest estimated count is 2410
+now we run the query (72,74)
+the true count is 5
+the t-digest estimated count is 6
+now we run the query (18,63)
+the true count is 4750
+the t-digest estimated count is 4782
+now we run the query (25,51)
+the true count is 3024
+the t-digest estimated count is 3126
+now we run the query (29,33)
+the true count is 381
+the t-digest estimated count is 522
+now we run the query (48,54)
+the true count is 607
+the t-digest estimated count is 743
+now we run the query (51,75)
+the true count is 1394
+the t-digest estimated count is 1457
+now we run the query (78,81)
+the true count is 0
+the t-digest estimated count is 4
+now we run the query (45,71)
+the true count is 2096
+the t-digest estimated count is 2150
+now we run the query (45,59)
+the true count is 1588
+the t-digest estimated count is 1685
+now we run the query (45,68)
+the true count is 2059
+the t-digest estimated count is 2112
+now we run the query (58,72)
+the true count is 515
+the t-digest estimated count is 581
+now we run the query (77,78)
+the true count is 0
+the t-digest estimated count is 1
+now we run the query (56,65)
+the true count is 638
+the t-digest estimated count is 707
+now we run the query (77,84)
+the true count is 3
+the t-digest estimated count is 5
+now we run the query (32,37)
+the true count is 525
+the t-digest estimated count is 652
+now we run the query (75,84)
+the true count is 4
+the t-digest estimated count is 8
+now we run the query (47,68)
+the true count is 1823
+the t-digest estimated count is 1886
+now we run the query (70,77)
+the true count is 24
+the t-digest estimated count is 28
+now we run the query (40,46)
+the true count is 548
+the t-digest estimated count is 665
+now we run the query (81,84)
+the true count is 0
+the t-digest estimated count is 0
+now we run the query (52,58)
+the true count is 625
+the t-digest estimated count is 744
+now we run the query (74,75)
+the true count is 0
+the t-digest estimated count is 3
+now we run the query (62,84)
+the true count is 229
+the t-digest estimated count is 257
+now we run the query (24,47)
+the true count is 2614
+the t-digest estimated count is 2727
+now we run the query (68,77)
+the true count is 47
+the t-digest estimated count is 60
+now we run the query (33,70)
+the true count is 3511
+the t-digest estimated count is 3588
+now we run the query (52,56)
+the true count is 401
+the t-digest estimated count is 513
+now we run the query (38,60)
+the true count is 2481
+the t-digest estimated count is 2582
+now we run the query (68,70)
+the true count is 12
+the t-digest estimated count is 31
+now we run the query (63,71)
+the true count is 147
+the t-digest estimated count is 174
+now we run the query (39,63)
+the true count is 2569
+the t-digest estimated count is 2660
+now we run the query (47,59)
+the true count is 1352
+the t-digest estimated count is 1459
+now we run the query (41,73)
+the true count is 2549
+the t-digest estimated count is 2602
+in 100 range queries, the mean absolute err is 64.966905, and the var of err is 1886.539103
+num of centroids is 59
+we can see 1500ms is around the percentile 1
